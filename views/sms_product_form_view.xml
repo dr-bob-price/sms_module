@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+
+
+    <record id="product_form_inherited" model="ir.ui.view">
+        <field name="name">product.form.inherited</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <!-- extended elements-->
+                    <header>
+                        <button name="where_used" string="Find_Where_Used" class="oe_highlight" type="object"/>
+                    </header>
+            <field name="type" position="after">
+                <field name="sms_product_origin"/>
+                <field name="sms_product_date"/>
+            </field>
+            <notebook position="inside">
+                <page string="ECOs">
+                    <group col="2" colspan="1">
+                        <field name="sms_ecoa"/>
+                        <field name="sms_ecob"/>
+                        <field name="sms_ecoc"/>
+                        <field name="sms_ecod"/>
+                        <field name="sms_ecoe"/>
+                    </group>
+                </page>
+                <page string="SMS Data">
+                    <group col="2" colspan="1">
+                        <field name="sms_product_notes"/>
+                        <field name="sms_description_picking"/>
+                        <field name="sms_part_number"/>
+                        <field name="sms_related_part"/>
+                        <field name="sms_cost"/>
+                        <field name="sms_qty_stock" string="Current Stock"/>
+                        <field name="sms_qty_forecast" string="Forecast Stock"/>
+                        <field name="sms_stock_value" string="SMS Stock Value"/>
+                        <field name="sms_supplierb" string="Supplier"/>
+                        <field name="sms_whereused_a" string="Where Used "/>
+                        <field name="sms_whereused_a_qty" string="Qty"/>
+                        <field name="sms_whereused_b" string="Where Used "/>
+                        <field name="sms_whereused_b_qty" string="Qty"/>
+                        <field name="sms_whereused_c" string="Where Used "/>
+                        <field name="sms_whereused_c_qty" string="Qty"/>
+                        <field name="sms_whereused_d" string="Where Used "/>
+                        <field name="sms_whereused_d_qty" string="Qty"/>
+
+
+
+                    </group>
+                </page>
+            </notebook>
+
+        </field>
+    </record>
+</data>
+</odoo>

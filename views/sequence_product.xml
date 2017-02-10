@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+
+    <record model="ir.sequence.type" id="seq_type_prod_nos">
+        <field name="name">Part Number</field>
+        <field name="code">product.product.code</field>
+    </record>
+    <record model="ir.sequence" id="seq_prod_nos">
+        <field name="name">Part Number</field>
+        <field name="code">product.product.code</field>
+        <field name="prefix">C-</field>
+        <field name="padding">5</field>
+    </record>
+
+</data>
+</odoo>

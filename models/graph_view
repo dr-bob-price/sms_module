@@ -1,0 +1,12 @@
+
+        <record id="sms_config_graph_view" model="ir.ui.view">
+            <field name="name">sms.config.graph</field>
+            <field name="model">sms.config</field>
+            <field name="type">graph</field>
+            <field name="arch" type="xml">
+                <graph string="View" type="line">
+                    <field name="date" type="row" interval="day"/>                  
+                    <field name="value" type="measure"/>
+                </graph>
+            </field>
+        </record>

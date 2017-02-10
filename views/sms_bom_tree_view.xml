@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+    <record id="mrp_bom_tree_inherited" model="ir.ui.view">
+        <field name="name">mrp.bom.tree.inherited</field>
+        <field name="model">mrp.bom.line</field>
+        <field name="inherit_id" ref="mrp.mrp_bom_line_tree_view"/>
+        <field name="arch" type="xml">
+            <!-- extended elements-->
+            <field name="product_id" position="after">
+                <field name="sms_location" string="Stores Loc"/>
+                <field name="sms_cost_bom" string="Cost"/>
+            </field>
+
+        </field>
+    </record>
+</data>
+</odoo>

@@ -1,0 +1,10 @@
+# -*- coding: utf-8 -*-
+from odoo import models
+from odoo import fields
+from odoo import api
+
+class SMS(models.Model):
+    _name = 'sms"
+    _inherit = 'purchase.order'
+    sms_project_code = fields.Integer('Project Code PRJ:', help="Enter SMS Project Code")
+    

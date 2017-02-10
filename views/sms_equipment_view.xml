@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+    <record id="maintenance_equipment_inherited" model="ir.ui.view">
+        <field name="name">maintenance_equipment.inherited</field>
+        <field name="model">maintenance.equipment</field>
+        <field name="inherit_id" ref="maintenance.hr_equipment_view_form"/>
+        <field name="arch" type="xml">
+            <!-- extended elements-->
+            <field name="owner_user_id" position="after">
+                <field name="sms_equip_sales_order"/>
+                <field name="sms_equip_purchase_order"/>
+                <field name="sms_equip_manufacture_order"/>
+                <field name="sms_equip_customer"/>
+                <field name="sms_equip_customer_country"/>
+                <field name="sms_equip_customer_state"/>
+                <field name="sms_cproduct_code"/>
+                <field name="sms_equip_supplier"/>
+                <field name="sms_sproduct_code"/>
+                <field name="sms_equip_optiona"/>
+                <field name="sms_equip_optionb"/>
+            </field>
+
+            <field name="location" position="after">
+                <field name="sms_equip_carrier"/>
+                <field name="sms_carrier"/>
+                <field name="sms_carrier_track"/>
+                <field name="sms_customs_export"/>
+                <field name="sms_customs_import"/>
+                <field name="sms_install_date"/>
+                <field name="sms_installer" string="Installer"/>
+                <field name="sms_training_date"/>
+                <field name="sms_trainer" string="Trainer"/>
+            </field>
+
+            <notebook position="inside">
+                <page string="Production Info">
+                    <group col="2" colspan="1">
+                        <field name="sms_equip_manufacture_orderb"/>
+                        <field name="sms_equip_manufacture_orderc"/>
+                        <field name="sms_equip_manufacture_orderd"/>
+                        <field name="sms_equip_manufacture_ordere"/>
+                        <field name="sms_equip_manufacture_orderf"/>
+                        <field name="sms_equip_manufacture_orderg"/>
+                        <field name="sms_equip_manufacture_orderh"/>
+                        <field name="sms_equip_move_raw_ids"/>
+                    </group>
+                </page>
+
+                <page string="SMS Legacy Data">
+                    <group col="2" colspan="1">
+                        <group name="left" col="2" colspan="1">
+                            <separator string="Production Data" colspan="2"/>
+                            <field name="sms_legacy_dvsoptions"/>
+                            <field name="sms_legacy_balancetype"/>
+                            <field name="sms_balancetype"/>
+                            <field name="sms_legacy_balanceheadsn"/>
+                            <field name="sms_legacy_balanceboardsn"/>
+                            <field name="sms_legacy_mfctype"/>
+                            <field name="sms_legacy_mfcsize"/>
+                            <field name="sms_legacy_probetype"/>
+                            <field name="sms_legacy_hdwirelen"/>
+                            <field name="sms_legacy_dpaheadsn"/>
+                            <field name="sms_legacy_dpaelecsn"/>
+                            <field name="sms_legacy_eurothermsn"/>
+                            <field name="sms_legacy_cameratype"/>
+                            <field name="sms_legacy_accsports"/>
+                            <field name="sms_legacy_preheattype"/>
+                            <field name="sms_legacy_valvetype"/>
+                            <field name="sms_legacy_ovmtype"/>
+                            <field name="sms_legacy_incubatortype"/>
+                            <field name="sms_incubatortype"/>
+                            <field name="sms_legacy_bottlesize"/>
+                            <field name="sms_legacy_bottleqty"/>
+                            <field name="sms_legacy_computerspec"/>
+                            <field name="sms_legacy_computeros"/>
+                            <field name="sms_legacy_computersn"/>
+                            <field name="sms_legacy_dataacq"/>
+                            <field name="sms_legacy_ctrlsoftware"/>
+                            <field name="sms_legacy_analysissoftware"/>
+
+                        </group>
+                        <group name="right" col="2" colspan="1">
+                            <separator string="Installation Data" colspan="2"/>
+
+                            <field name="sms_legacy_customer"/>
+                            <field name="sms_legacy_seractive"/>
+                            <field name="sms_legacy_sertype"/>
+                            <field name="sms_legacy_serstartdate"/>
+                            <field name="sms_legacy_serenddate"/>
+                            <field name="sms_legacy_gassupplya"/>
+                            <field name="sms_legacy_gassupplyb"/>
+                            <field name="sms_legacy_gassupplyc"/>
+                            <field name="sms_legacy_gassupplyd"/>
+                            <field name="sms_legacy_gassupplye"/>
+                            <field name="sms_legacy_username"/>
+                            <field name="sms_legacy_password"/>
+                            <field name="sms_legacy_upsa"/>
+                            <field name="sms_legacy_upsb"/>
+                            <field name="sms_legacy_voltage"/>
+                            <field name="sms_legacy_table"/>
+
+                        </group>
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+</data>
+</odoo>
