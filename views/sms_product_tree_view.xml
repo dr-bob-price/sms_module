@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+    <record id="product_tree_inherited" model="ir.ui.view">
+        <field name="name">product.tree.inherited</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_tree_view"/>
+        <field name="arch" type="xml">
+            <!-- extended elements-->
+            <field name="name" position="after">
+                <field name="sms_supplierb" string="Supplier"/>
+                <field name="description_picking" string="Stores Loc"/>
+                <field name="sms_qty_stock" string="Current Stock"/>
+                <field name="sms_cost" string="SMS Cost"/>
+                <field name="sms_stock_value" string="Stock Value"/>
+                <field name="sms_whereused_a" string="Where Used"/>
+            </field>
+
+        </field>
+    </record>
+    <record id="product_template_search_view" model="ir.ui.view">
+      <field name="model">product.template</field>
+      <field name="inherit_id" ref="product.product_template_search_view"/>
+      <field name="arch" type="xml">
+        <search string="Product">
+          <field name="sms_supplierb" string="Supplier"/>
+          <field name="sms_qty_stock" string="Current Stock"/>
+          <field name="sms_qty_forecast" string="Forecast Stock"/>
+          <field name="description_picking" string="Stores Location"/>
+          <filter name="Cabinet A" domain="[('description_picking','=like','A%')]"/>
+          <filter name="Cabinet B" domain="[('description_picking','=like','B%')]"/>
+          <filter name="Cabinet C" domain="[('description_picking','=like','C%')]"/>
+          <filter name="Cabinet D" domain="[('description_picking','=like','D%')]"/>
+          <filter name="Cabinet E" domain="[('description_picking','=like','E%')]"/>
+          <filter name="Cabinet F" domain="[('description_picking','=like','F%')]"/>
+          <filter name="Cabinet G" domain="[('description_picking','=like','G%')]"/>
+          <filter name="Cabinet H" domain="[('description_picking','=like','H%')]"/>
+          <filter name="Cabinet I" domain="[('description_picking','=like','I%')]"/>
+          <filter name="Cabinet J" domain="[('description_picking','=like','J%')]"/>
+          <filter name="Cabinet K" domain="[('description_picking','=like','K%')]"/>
+
+        </search>
+      </field>
+    </record>
+
+</data>
+</odoo>

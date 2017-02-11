@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="sms_config_form_view" model="ir.ui.view">
+            <field name="name">sms.config.form</field>
+            <field name="model">sms.config</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+
+                <form>
+                    <header>
+                        <button name="update_stock_value" string="UpdateParts-Prices" class="oe_highlight" type="object"/>
+                        <button name="update_bom_cost" string="Update_BOM_Cost" class="oe_highlight" type="object"/>
+                        <button name="find_where_used" string="Find_Where_Used" class="oe_highlight" type="object"/>
+                    </header>
+                    <sheet string="Sheet1">
+                        <h1>
+                            <label string="SMS Custom Data"/>
+                        </h1>
+                        <group string="Stock Valuation">
+                            <field name="name"/>
+                            <field name="date"/>
+                            <field name="descrip"/>
+                            <field name="value"/>
+                            <field name="parts"/>
+                            <field name="bom_number"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sms_config_tree_view" model="ir.ui.view">
+            <field name="name">sms.config.tree</field>
+            <field name="model">sms.config</field>
+            <field name="arch" type="xml">
+                <tree string="Tree View">
+                    <field name="name"/>
+                    <field name="date"/>
+                    <field name="descrip"/>
+                    <field name="value"/>
+                    <field name="parts"/>
+                    <field name="bom_number"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="sms_config_graph_view" model="ir.ui.view">
+            <field name="name">sms.config.graph</field>
+            <field name="model">sms.config</field>
+            <field name="type">graph</field>
+            <field name="arch" type="xml">
+                <graph string="View" type="line">
+                    <field name="date" type="row" interval="day"/>                  
+                    <field name="value" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+
+    <record id="action_sms_config" model="ir.actions.act_window">
+        <field name="name">SMS Config</field>
+        <field name="res_model">sms.config</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">list,graph,form</field>
+
+
+    </record>
+
+   <menuitem name="SMS Custom Data" id="sms_config" action="action_sms_config" parent="sms_menu" sequence="79"/>
+
+
+</odoo>

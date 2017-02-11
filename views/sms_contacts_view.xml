@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+    <record id="res_partner_tree_inherited" model="ir.ui.view">
+        <field name="name">res.partner.tree.inherited</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <!-- extended elements-->
+            <field name="function" position="after">
+                <field name="category_id"/>
+                <field name="ref"/> 
+            </field>
+            <field name="email" position="after">
+                <field name="sms_product"/>
+                <field name="sms_systema"/>
+                <field name="comment"/>
+            </field>
+        </field>
+    </record>
+</data>
+</odoo>

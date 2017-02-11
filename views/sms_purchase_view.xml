@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+    <record id="purchase_order_form_inherited" model="ir.ui.view">
+        <field name="name">purchase.order.form.inherited</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <!-- extended elements-->
+            <field name="partner_id" position="after">
+                <field name="sms_proforma_supp"/>
+                <field name="sms_po_received"/>
+            </field>
+            <field name="currency_id" position="after">
+                <field name="sms_po_notes"/>
+            </field>
+            <field name="date_order" position="after">
+                <field name="sms_project_code"/>
+                <field name="sms_project"/>
+                <field name="sms_sage_code"/>
+                <field name="sms_po_requestor"/>
+                <!--<field name="sms_contact_account"/>-->
+            </field>
+        </field>
+    </record>
+</data>
+</odoo>

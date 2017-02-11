@@ -1,0 +1,56 @@
+
+# This gets cost from vendor, if not then from cost field then updates for UOM and calc stock value
+
+for n in self.env['product.template'].search([]):
+    n.sms_cost = n.standard_price
+    uom_id = n.uom_po_id.ids
+    uom_factor = n.uom_po_id.browse(uom_id).factor_inv
+    start=0
+    for m in n.seller_ids.ids:
+        price = n.seller_ids.browse(m).price/uom_factor
+        if price > start:
+            n.sms_cost = price
+            start = price
+    bom_ids = self.env['mrp.bom'].search([]).ids
+    for record in bom_ids:
+        bom_name = self.env['mrp.bom'].browse(record).product_tmpl_id.name
+        if bom_name == product.name:
+            n.sms_cost = self.env['mrp.bom'].browse(record).sms_bom_cost
+    n.sms_stock_value = n.qty_available * n.sms_cost
+------------------------------------------------------------------------------------------------------
+#Stock Value
+total = 0
+for n in self.env['product.template'].search([]):
+    total = total + n.sms_stock_value
+    self.env['sms.config'].browse(1).value=total
+------------------------------------------------------------------------------------------------------
+#Part Count
+total = 0
+for n in self.env['product.template'].search([]):
+    total = total + n.qty_available
+    self.env['sms.config'].browse(2).value=total
+
+------------------------------------------------------------------------------------------------------
+
+# This gets BOM cost and adds it to the product
+
+for product in self.env['product.template'].search([]):
+    bom_ids = self.env['mrp.bom'].search([]).ids
+    for record in bom_ids:
+        bom_name = self.env['mrp.bom'].browse(record).product_tmpl_id.name
+        if bom_name == product.name:
+            product.sms_cost = self.env['mrp.bom'].browse(record).sms_bom_cost
+
+-------------------------------------------------------------------------------------------------------        
+
+# This adds up all the bom lines using sms_cost
+    
+for m in self.env['mrp.bom'].search([]):
+    line_cost = 0
+    total = 0
+    for n in m.bom_line_ids.ids:
+        line_product_id = m.bom_line_ids.browse(n).product_id.ids
+        line_product_cost = m.bom_line_ids.browse(n).product_id.browse(line_product_id).sms_cost
+        line_cost = m.bom_line_ids.browse(n).product_qty * line_product_cost
+        total = total + line_cost
+    m.sms_bom_cost=total 

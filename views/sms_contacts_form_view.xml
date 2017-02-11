@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+    <record id="res_partner_form_inherited" model="ir.ui.view">
+        <field name="name">res.partner.form.inherited</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <!-- extended elements-->
+            <field name="category_id" position="after">
+                <field name="__last_update"/>
+            </field>
+            <notebook position="inside">
+                <page string="Events/Products">
+                    <group col="2" colspan="1">
+                        <field name="sms_product"/>
+                        <field name="sms_productb"/>
+                        <field name="sms_productc"/>
+                        <field name="sms_productd"/>
+                        <field name="sms_producte"/>
+                        <field name="sms_productf"/>
+                        <field name="sms_productg"/>
+                        <field name="sms_producth"/>
+                        <field name="sms_producti"/>
+                        <field name="sms_productj"/>
+                    </group>
+                </page>
+                <page string="Installed Systems">
+                    <group col="2" colspan="1">
+                        <field name="sms_systema"/>
+                        <field name="sms_systemb"/>
+                        <field name="sms_systemc"/>
+                        <field name="sms_systemd"/>
+                        <field name="sms_systeme"/>
+                    </group>
+                </page>
+                <page string="SMS Data">
+                    <group col="2" colspan="1">
+                        <field name="sms_contact_accountno"/>
+                        <field name="sms_gm_accountno"/>
+                        <field name="sms_gm_uactid"/>
+                        <field name="sms_gm_unda"/>
+                        <field name="sms_gm_ucompuser"/>
+                        <field name="sms_gm_ualtemail" widget="email" />
+
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+</data>
+</odoo>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+
+
+    <record id="action_systemd_form" model="ir.actions.act_window">
+        <field name="name">SMS DVS Systems</field>
+        <field name="res_model">maintenance.equipment</field>
+        <field name="domain">[('category_id','=','DVS')]</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_systemi_form" model="ir.actions.act_window">
+        <field name="name">SMS SEA Systems</field>
+        <field name="res_model">maintenance.equipment</field>
+        <field name="domain">[('category_id','=','IGC')]</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_systemg_form" model="ir.actions.act_window">
+        <field name="name">SMS GenRH Systems</field>
+        <field name="res_model">maintenance.equipment</field>
+        <field name="domain">[('category_id','=','GenRH')]</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+
+    <record id="action_prod_form" model="ir.actions.act_window">
+        <field name="name">SMS Products: Systems</field>
+        <field name="res_model">product.template</field>
+        <field name="domain">[('categ_id','=','Systems')]</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,form</field>
+    </record>
+
+
+    <record id="action_prodacc_form" model="ir.actions.act_window">
+        <field name="name">SMS Products: Accessories</field>
+        <field name="res_model">product.template</field>
+        <field name="domain">[('categ_id','=','Accessories')]</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,form</field>
+    </record>
+
+    <record id="action_prodcon_form" model="ir.actions.act_window">
+        <field name="name">SMS Products: Consumables</field>
+        <field name="res_model">product.template</field>
+        <field name="domain">[('categ_id','=','Consumables')]</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,form</field>
+    </record>
+
+
+    <record id="action_prodsoft_form" model="ir.actions.act_window">
+        <field name="name">SMS Products: Software</field>
+        <field name="res_model">product.template</field>
+        <field name="domain">[('categ_id','=','Software')]</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,form</field>
+    </record>
+
+    <record id="action_prodserv_form" model="ir.actions.act_window">
+        <field name="name">SMS Products: Service</field>
+        <field name="res_model">product.template</field>
+        <field name="domain">[('categ_id','=','Service')]</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,form</field>
+    </record>
+
+    <record id="action_customer_tree" model="ir.actions.act_window">
+        <field name="name">SMS Customers</field>
+        <field name="res_model">res.partner</field>
+        <field name="domain">[('customer','=',True)]</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+   <record id="action_supplier_tree" model="ir.actions.act_window">
+        <field name="name">SMS Suppliers</field>
+        <field name="res_model">res.partner</field>
+        <field name="domain">[('customer','=',False)]</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_project_tree" model="ir.actions.act_window">
+        <field name="name">SMS Business System</field>
+        <field name="res_model">project.project</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,form</field>
+    </record>
+
+    <record id="action_lead_tree" model="ir.actions.act_window">
+        <field name="name">SMS Leads</field>
+        <field name="res_model">crm.lead</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_mo_list" model="ir.actions.act_window">
+        <field name="name">SMS Manufacturing</field>
+        <field name="res_model">mrp.production</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_po_list" model="ir.actions.act_window">
+        <field name="name">SMS Purchase Orders</field>
+        <field name="res_model">purchase.order</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_so_list" model="ir.actions.act_window">
+        <field name="name">SMS Sales Orders</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_menu_list" model="ir.actions.act_window">
+        <field name="name">SMS Menu A</field>
+        <field name="res_model">sms.menu</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_menub_list" model="ir.actions.act_window">
+        <field name="name">SMS Menu B</field>
+        <field name="res_model">sms.menub</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_menuc_list" model="ir.actions.act_window">
+        <field name="name">SMS Menu C</field>
+        <field name="res_model">sms.menuc</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_menud_list" model="ir.actions.act_window">
+        <field name="name">SMS Menu D</field>
+        <field name="res_model">sms.menud</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_menue_list" model="ir.actions.act_window">
+        <field name="name">SMS Menu E</field>
+        <field name="res_model">sms.menue</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_menuf_list" model="ir.actions.act_window">
+        <field name="name">SMS Menu F</field>
+        <field name="res_model">sms.menuf</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+
+
+
+
+    <menuitem name="SMS Menu" id="sms_menu" sequence="0"/>
+
+    <menuitem name="SMS Projects" id="sms_project_tree" action="action_project_tree" parent="sms_menu" sequence="10"/>
+    <menuitem name="SMS Leads" id="sms_lead_tree" action="action_lead_tree" parent="sms_menu" sequence="15"/>
+    <menuitem name="SMS Customers" id="sms_customer_tree" action="action_customer_tree" parent="sms_menu" sequence="20"/>
+    <menuitem name="SMS Suppliers" id="sms_supplier_tree" action="action_supplier_tree" parent="sms_menu" sequence="25"/>
+    <menuitem name="SMS Purchase Orders" id="sms_po_list" action="action_po_list" parent="sms_menu" sequence="30"/>
+    <menuitem name="SMS Sales Orders" id="sms_so_list" action="action_so_list" parent="sms_menu" sequence="40"/>
+    <menuitem name="SMS Manufacturing" id="sms_mo_list" action="action_mo_list" parent="sms_menu" sequence="50"/>
+    <menuitem name="SMS Products: Systems" id="sms_product_form" action="action_prod_form" parent="sms_menu" sequence="60"/>
+    <menuitem name="SMS Products: Accessories" id="sms_prodacc_form" action="action_prodacc_form" parent="sms_menu" sequence="65"/>
+    <menuitem name="SMS Products: Consumables" id="sms_prodcon_form" action="action_prodcon_form" parent="sms_menu" sequence="67"/>
+    <menuitem name="SMS Products: Software" id="sms_prodsoft_form" action="action_prodsoft_form" parent="sms_menu" sequence="68"/>
+    <menuitem name="SMS Products: Service" id="sms_prodserv_form" action="action_prodserv_form" parent="sms_menu" sequence="69"/>
+    <menuitem name="SMS DVS Systems" id="sms_systemd_form" action="action_systemd_form" parent="sms_menu" sequence="70"/>
+    <menuitem name="SMS SEA Systems" id="sms_systemi_form" action="action_systemi_form" parent="sms_menu" sequence="75"/>
+    <menuitem name="SMS GenRH Systems" id="sms_systemg_form" action="action_systemg_form" parent="sms_menu" sequence="78"/>
+
+    <menuitem name="SMS Configuration" id="sms_config_top" parent="sms_menu" sequence="80"/>
+
+    <menuitem name="SMS Install Opt" id="sms_config_menu" action="action_menu_list" parent="sms_config_top" sequence="10"/>
+    <menuitem name="SMS Install Gases" id="sms_config_menub" action="action_menub_list" parent="sms_config_top" sequence="20"/>
+    <menuitem name="SMS Service Opt" id="sms_config_menuc" action="action_menuc_list" parent="sms_config_top" sequence="40"/>
+    <menuitem name="SMS Install PC" id="sms_config_menud" action="action_menud_list" parent="sms_config_top" sequence="30"/>
+    <menuitem name="SMS Project Codes" id="sms_config_menue" action="action_menue_list" parent="sms_config_top" sequence="50"/>
+    <menuitem name="SMS Sage Codes" id="sms_config_menuf" action="action_menuf_list" parent="sms_config_top" sequence="60"/>
+ 
+
+</data>
+</odoo>

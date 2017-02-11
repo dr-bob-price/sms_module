@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+    <record id="maintenance_equipment_tree_inherited" model="ir.ui.view">
+        <field name="name">maintenance_equipment_tree_inherited</field>
+        <field name="model">maintenance.equipment</field>
+        <field name="inherit_id" ref="maintenance.hr_equipment_view_tree"/>
+        <field name="arch" type="xml">
+            <!-- extended elements-->
+            <field name="owner_user_id" position="after">
+                <field name="sms_equip_customer"/>
+                <field name="sms_cproduct_code"/>
+                <field name="sms_equip_optiona" string="Accessory"/>
+                <field name="sms_equip_customer_country"/>
+                <field name="sms_equip_customer_state"/>
+                <field name="sms_equip_supplier"/>
+                <field name="sms_install_date"/>
+                <field name="warranty" string="Waranty Exp Date"/>
+                <field name="sms_carrier"/>
+                <field name="sms_carrier_track"/>
+            </field>
+            <field name="serial_no" position="after">
+                <field name="sms_equip_sales_order"/>
+                <field name="sms_equip_purchase_order"/>
+            </field>
+        </field>
+    </record>
+</data>
+</odoo>

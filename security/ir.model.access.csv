@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sms_menu,access_sms_menu,model_sms_menu,base.group_user,1,0,0,0
+access_sms_menub,access_sms_menub,model_sms_menub,base.group_user,1,0,0,0
+access_sms_menuc,access_sms_menuc,model_sms_menuc,base.group_user,1,0,0,0
+access_sms_menud,access_sms_menud,model_sms_menud,base.group_user,1,0,0,0
+access_sms_menue,access_sms_menue,model_sms_menue,base.group_user,1,1,0,0
+access_sms_menuf,access_sms_menuf,model_sms_menuf,base.group_user,1,1,0,0
+access_sms_config,access_sms_config,model_sms_config,base.group_user,1,1,1,0
+
